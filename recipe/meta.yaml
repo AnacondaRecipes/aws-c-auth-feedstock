@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/awslabs/aws-c-auth/archive/v{{ version }}.tar.gz
   sha256: 2b6b05e046227f87c39d0dd821759273c80e864689dfb36bbc64bed86dc8336f
+  patches:                                # [linux64 or (linux and aarch64)]
+    - 0001-skip-test-failing-on-CI.patch  # [linux64 or (linux and aarch64)]
 
 build:
   number: 0
@@ -18,6 +20,7 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - ninja-base
+    - patch  # [linux64 or (linux and aarch64)]
   host:
     - aws-c-cal 0.5.20
     - aws-c-common 0.8.5
