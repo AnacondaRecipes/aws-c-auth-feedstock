@@ -20,11 +20,11 @@ requirements:
     - ninja
     - aws-c-common
   host:
-    - aws-c-cal
-    - aws-c-common
-    - aws-c-http
-    - aws-c-io
-    - aws-c-sdkutils
+    - aws-c-cal 0.8.5
+    - aws-c-common 0.11.1
+    - aws-c-http 0.9.3
+    - aws-c-io 0.17.0
+    - aws-c-sdkutils 0.2.3
 
 test:
   commands:
