@@ -39,6 +39,11 @@ about:
   license_family: Apache
   license_file: LICENSE
   summary: 'C99 library implementation of AWS client-side authentication: standard credentials providers and signing.'
+  description: |
+    C99 library implementation of AWS client-side authentication: standard credentials providers and signing.
+    From a cryptographic perspective, only functions with the suffix "_constant_time" should be considered constant time.
+  doc_url: https://github.com/awslabs/aws-c-auth
+  dev_url: https://github.com/awslabs/aws-c-auth
 extra:
   recipe-maintainers:
     - xhochy
