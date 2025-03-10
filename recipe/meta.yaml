@@ -1,4 +1,4 @@
-{% set version = "0.6.19" %}
+{% set version = "0.8.5" %}
 
 package:
   name: aws-c-auth
@@ -6,9 +6,7 @@ package:
 
 source:
   url: https://github.com/awslabs/aws-c-auth/archive/v{{ version }}.tar.gz
-  sha256: 2b6b05e046227f87c39d0dd821759273c80e864689dfb36bbc64bed86dc8336f
-  patches:                                # [linux64 or (linux and aarch64)]
-    - 0001-skip-test-failing-on-CI.patch  # [linux64 or (linux and aarch64)]
+  sha256: 302f40c189456defe14860d13a22a6bf435cdb9eee2b60c585e8725825385cbb
 
 build:
   number: 0
@@ -20,13 +18,12 @@ requirements:
     - cmake
     - {{ compiler('c') }}
     - ninja-base
-    - patch  # [linux64 or (linux and aarch64)]
   host:
-    - aws-c-cal 0.5.20
-    - aws-c-common 0.8.5
-    - aws-c-http 0.6.25
-    - aws-c-io 0.13.10
-    - aws-c-sdkutils 0.1.6
+    - aws-c-cal 0.8.5
+    - aws-c-common 0.11.1
+    - aws-c-http 0.9.3
+    - aws-c-io 0.17.0
+    - aws-c-sdkutils 0.2.3
 
 test:
   commands:
@@ -44,8 +41,8 @@ about:
   description: |
     C99 library implementation of AWS client-side authentication: standard credentials providers and signing.
     From a cryptographic perspective, only functions with the suffix "_constant_time" should be considered constant time.
-  dev_url: https://github.com/awslabs/aws-c-auth
   doc_url: https://github.com/awslabs/aws-c-auth
+  dev_url: https://github.com/awslabs/aws-c-auth
 extra:
   recipe-maintainers:
     - xhochy
