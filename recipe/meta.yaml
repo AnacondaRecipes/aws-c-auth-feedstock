@@ -1,4 +1,4 @@
-{% set version = "0.8.5" %}
+{% set version = "0.9.0" %}
 
 package:
   name: aws-c-auth
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/awslabs/aws-c-auth/archive/v{{ version }}.tar.gz
-  sha256: 302f40c189456defe14860d13a22a6bf435cdb9eee2b60c585e8725825385cbb
+  sha256: aa6e98864fefb95c249c100da4ae7aed36ba13a8a91415791ec6fad20bec0427
 
 build:
   number: 0
@@ -15,12 +15,12 @@ build:
 
 requirements:
   build:
-    - cmake
+    - cmake >=3.9
     - {{ compiler('c') }}
     - ninja-base
   host:
-    - aws-c-cal 0.8.5
-    - aws-c-common 0.11.1
+    - aws-c-cal 0.9.2
+    - aws-c-common 0.12.3
     - aws-c-http 0.9.3
     - aws-c-io 0.17.0
     - aws-c-sdkutils 0.2.3
