@@ -10,28 +10,29 @@ source:
   sha256: aa6e98864fefb95c249c100da4ae7aed36ba13a8a91415791ec6fad20bec0427
 
 build:
-  number: 1
+  number: 2
   run_exports:
     - {{ pin_subpackage("aws-c-auth", max_pin="x.x.x") }}
 
 requirements:
   build:
-    - cmake >=3.9
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
+    - cmake >=3.9
     - ninja-base
   host:
     - aws-c-cal 0.9.2
-    - aws-c-common 0.12.3
-    - aws-c-http 0.10.2
-    - aws-c-io 0.20.1
+    - aws-c-common 0.12.4
+    - aws-c-http 0.10.4
+    - aws-c-io 0.21.4
     - aws-c-sdkutils 0.2.4
 
 test:
   commands:
     - test -f $PREFIX/lib/libaws-c-auth${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/include/aws/auth/auth.h  # [unix]
-    - if not exist %LIBRARY_INC%\\aws\\auth\\auth.h exit 1          # [win]
-    - if not exist %PREFIX%\\Library\\bin\\aws-c-auth.dll exit 1  # [win]
+    - if not exist %LIBRARY_INC%\aws\auth\auth.h exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\aws-c-auth.dll exit 1  # [win]
 
 about:
   home: https://github.com/awslabs/aws-c-auth
