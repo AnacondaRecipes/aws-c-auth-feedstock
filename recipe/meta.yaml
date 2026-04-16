@@ -23,8 +23,8 @@ requirements:
   host:
     - aws-c-cal 0.9.13
     - aws-c-common 0.12.6
-    - aws-c-http 0.10.7
-    - aws-c-io 0.23.3
+    - aws-c-http 0.10.13
+    - aws-c-io 0.26.3
     - aws-c-sdkutils 0.2.4
 
 test:
