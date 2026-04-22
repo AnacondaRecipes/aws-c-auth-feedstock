@@ -1,5 +1,5 @@
 {% set name = "aws-c-auth" %}
-{% set version = "0.9.4" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/awslabs/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 704b2f965c31d9d0fd8d9ab207bc8c838e3683c56bd8407e472bbc8fa9f9a209
+  sha256: 85d737f0f735256f1931e85e4cadbe228d88698f7b59a9b390b49ef5d0778a43
 
 build:
   number: 0
@@ -23,8 +23,8 @@ requirements:
   host:
     - aws-c-cal 0.9.13
     - aws-c-common 0.12.6
-    - aws-c-http 0.10.7
-    - aws-c-io 0.23.3
+    - aws-c-http 0.10.13
+    - aws-c-io 0.26.3
     - aws-c-sdkutils 0.2.4
 
 test:
