@@ -10,7 +10,7 @@ source:
   sha256: 12a29eb62c61cef4b38c90d4f0dd2657dc585a15c138d60941d6f20c1ad3b12d
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage("aws-c-auth", max_pin="x.x.x") }}
 
@@ -21,11 +21,11 @@ requirements:
     - cmake >=3.9
     - ninja-base
   host:
-    - aws-c-cal 1.0.0
-    - aws-c-common 1.0.1
-    - aws-c-http 1.0.0
-    - aws-c-io 1.0.0
-    - aws-c-sdkutils 1.0.0
+    - aws-c-cal {{ aws_c_cal }}
+    - aws-c-common {{ aws_c_common }}
+    - aws-c-http 1.1.1
+    - aws-c-io 1.1.1
+    - aws-c-sdkutils {{ aws_c_sdkutils }}
 
 test:
   commands:
